@@ -1,9 +1,10 @@
-import React from 'react'
+import Transactions from "./components/Transactions"
+
 
 const App = () => {
   return (
     <div>
-      veikia
+      <Transactions/>
     </div>
   )
 }

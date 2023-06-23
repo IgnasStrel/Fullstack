@@ -4,7 +4,10 @@
   "description": "",
   "main": "./back/index.js",
   "scripts": {
-    "start": "nodemon ./back/index.js"
+    "start": "nodemon ./back/index.js",
+    "server": "nodemon ./back/index.js",
+    "client": "npm start --prefix front",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
