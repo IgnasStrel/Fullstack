@@ -6,7 +6,9 @@ const Transactions = () => {
 
     const getData = () => {
         transactionsService.getTansactions().then(res => {
-            setTransactions([...res.data])
+            if(res !== undefined){
+                setTransactions([...res])
+            }         
         })
     }
 

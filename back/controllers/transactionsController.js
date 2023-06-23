@@ -23,7 +23,7 @@ const setTransaction = asyncHandler( async(req, res)=>{
 // @access PRIVAT
 
 const getTransactions = asyncHandler( async (req, res)=>{
-    const transactions = await Transactions.find({user: 'cia turi buti tavo user id'});
+    const transactions = await Transactions.find({user: '649543706dc77711371cc807'});
     if(!transactions){
         res.status(400)
         throw new Error('transactions not found');
