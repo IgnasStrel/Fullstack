@@ -12,8 +12,18 @@ const getTansactions = async ()=>{
     }
 }
 
+const setTransaction = async (transaction)=>{
+    try {
+        const response = await axios.post('/api/transaction', transaction);
+        return response;
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const transactionsService = {
     getTansactions,
-
+    setTransaction
 }
 export default transactionsService
