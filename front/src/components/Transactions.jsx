@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import transactionsService from '../services/transactionsService';
+import NewTransaction from './NewTransaction';
 
 const Transactions = () => {
     const [transactions, setTransactions] = useState([]);
@@ -20,6 +21,7 @@ const Transactions = () => {
 
     return (
         <div>
+            <NewTransaction getData={getData}/>
             {
                 transactions.length > 0 ? (
                     <table>
