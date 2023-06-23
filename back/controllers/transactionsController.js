@@ -2,7 +2,7 @@ const Transactions = require('../models/Transaction');
 const asyncHandler = require('express-async-handler');
 
 // @desc Create new transactions
-// @route POST /api/transactions
+// @route POST /api/transaction
 // @access PRIVAT
 
 const setTransaction = asyncHandler( async(req, res)=>{
@@ -18,7 +18,20 @@ const setTransaction = asyncHandler( async(req, res)=>{
     res.status(200).send(transaction);
 });
 
+// @desc get transactions
+// @route GET /api/transactions
+// @access PRIVAT
+
+const getTransactions = asyncHandler( async (req, res)=>{
+    const transactions = await Transactions.find({user: req.body.id});
+    if(!transactions){
+        res.status(400)
+        throw new Error('transactions not found');
+    }
+    res.status(200).send(transactions);
+})
 module.exports = {
     setTransaction,
-    
+    getTransactions
+
 }
