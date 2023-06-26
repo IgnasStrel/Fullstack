@@ -1,13 +1,11 @@
-import Transactions from "./components/Transactions"
-
+import Transactions from "./components/Transactions";
 
 const App = () => {
   return (
     <div>
-      
-      <Transactions/>
+      <Transactions />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
